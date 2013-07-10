@@ -1,4 +1,11 @@
 Backstage::Application.routes.draw do
+
+  devise_for :admin_users
+  resources :tablets
+  root :to => 'dashboard#home'
+  match '/assign' => 'tablets#assign'
+  match '/assign_tablets' => 'tablets#assign_tablets'
+  match '/show_assignment' => 'tablets#show_assignment'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

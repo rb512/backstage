@@ -1,0 +1,23 @@
+<h1>Listing tablets</h1>
+
+<table>
+  <tr>
+    <th>Serial no</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tablets.each do |tablet| %>
+  <tr>
+    <td><%= tablet.serial_no %></td>
+    <td><%= link_to 'Show', tablet %></td>
+    <td><%= link_to 'Edit', edit_tablet_path(tablet) %></td>
+    <td><%= link_to 'Destroy', tablet, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Tablet', new_tablet_path %>

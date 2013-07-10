@@ -1,0 +1,21 @@
+<%= simple_form_for :assign_tablets, { url: assign_tablets_path } do |f| %>
+  <%= f.error_notification %>
+  <div class="form-inputs">
+	  <%=f.label "Restaurant"%>
+  <%=f.select :restaurant_id, @restaurants.collect {|restaurant| [restaurant.name, restaurant.id]}, {include_blank: 'None'}  %>	
+  
+    <%= f.input :number_of_tablets %>
+	
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Assign", :class => 'btn btn-primary' %>
+  </div>
+<% end %>
+<p>
+  
+</p>
+
+
+
+<%= link_to 'Back', tablets_path %>

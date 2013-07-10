@@ -1,0 +1,4 @@
+  <%if flash[:alert] || flash[:notice] || flash[:error]%>
+    <div class ="<%=notice_type(@notice || "")%>" id ="flash">
+      <%=flash[:alert] || flash[:error] || flash[:notice]%></div>
+  <%end%>
