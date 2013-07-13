@@ -51,7 +51,7 @@ class TabletsController < ApplicationController
     end
     respond_to do |format|
       if updated
-        format.html { redirect_to home_path, notice: 'Tablet was successfully updated.' }
+        format.html { redirect_to root_path, notice: 'Tablet was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "assign" }
