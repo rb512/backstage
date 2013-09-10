@@ -11,7 +11,7 @@ table class="table table-striped"
    th
   -@menu_items.each do |item|
     tr
-	  td= image_tag item.item_asset.url(:small) || "no_image.png"
+	  td= image_tag item.item_asset.url(:small)
       td= item.name
       td= item.description
       td= item.price
