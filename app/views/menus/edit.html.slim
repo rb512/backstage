@@ -1,0 +1,10 @@
+= simple_form_for @menu, :html => {:multipart => true}, :wrapper => 'inline' do |f|
+  = f.input :name, :hint => 'Just a name for your menu'
+  = f.input :menu_type, :hint => 'Type of menu'
+  = render "#{@menu.current_step}", :f => f
+
+  br
+  .actions
+  = f.button :submit, "Update", :disable_with => 'Please wait ...'
+ 
+= link_to 'Back', menus_path

@@ -1,0 +1,5 @@
+= f.simple_fields_for :menu_items do |menu_item|
+  = render 'menu_item_fields', :f => menu_item
+.links
+  = link_to_add_association 'Add Item', f, :menu_items, 
+ :render_options => { :wrapper => 'inline' }, :class => 'btn btn-primary'

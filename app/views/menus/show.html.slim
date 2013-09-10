@@ -1,0 +1,26 @@
+h3 Menu Items
+
+table class="table table-striped"
+  tr
+   th 
+   th Item Name
+   th Item Description
+   th Item Price
+   th Category	
+   th Actions
+   th
+  -@menu_items.each do |item|
+    tr
+	  td= image_tag item.item_asset.url(:small) || "no_image.png"
+      td= item.name
+      td= item.description
+      td= item.price
+	  td= item.category
+	  td= link_to 'Edit', edit_menu_menu_item_path(item), :class => 'icon-pencil' 
+	  td= link_to 'Delete', menu_menu_item_path(item.id), :confirm => 'Are you sure?', :method => :delete, :class => 'icon-remove'
+p
+ = link_to 'Edit', edit_menu_path(@menu)
+ = ' | '
+ = link_to 'Back', menus_path
+ = ' | '
+ = link_to 'Add New Item', new_menu_menu_item_path(@menu)

@@ -1,0 +1,21 @@
+.nested-fields
+  table
+    tr
+      td
+        = f.input :name, :wrapper => :inline, :label => false, :hint => 'Item Name' do
+          = f.input_field :name, :hint => 'Item Name'
+      td
+        = f.input :description, :wrapper => :inline, :label => false, :hint => 'Item Description' do
+          = f.input_field :description, :rows => "5", :hint => 'Item Description'
+      td
+        = f.input :price, :wrapper => :inline, :label => false, :hint => 'Item Price' do
+          = f.input_field :price, :hint => 'Item Price'
+      td
+        = f.input :category, :wrapper => :inline, :label => false, :hint => 'Category' do
+          = f.select(:category, @categories.collect {|category| [ category.name] })
+	  td 
+	   = f.input :item_asset, :wrapper => :inline, :label => false, :hint => 'Image' do
+	     = f.file_field :item_asset
+	   
+      td
+        = link_to_remove_association "remove item", f, :class => "btn btn-mini btn-danger"

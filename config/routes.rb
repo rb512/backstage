@@ -1,7 +1,14 @@
 Backstage::Application.routes.draw do
 
-  devise_for :admin_users
+  devise_for :admin_users, :controllers => {:registrations => 'registrations', :sessions => 'sessions'}
   resources :tablets
+  
+  resources :menus do
+    resources :menu_items
+  end
+  
+  resources :menu_items
+  
   root :to => 'dashboard#home'
   match '/assign' => 'tablets#assign'
   match '/assign_tablets' => 'tablets#assign_tablets'

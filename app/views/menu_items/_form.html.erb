@@ -1,0 +1,17 @@
+<%= simple_form_for @menu_item, :html => {:multipart => true},  :class => 'form-horizontal' do |f| %>
+	  <%= f.error_notification %>
+	  <div class="form-inputs">
+		  <%=f.input :name%>
+		  <%=f.input :description%>
+    	  <%=f.input :price%>
+		  <%=f.select :category, @categories.collect {|category| [category.name]}%>
+		  <%=f.input :item_asset%>
+	  </div>	
+	  <%=f.hidden_field :menu_id, :value => @menu_item.menu_id%>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                menu_path(@menu), :class => 'btn' %>
+  </div>
+<% end %>

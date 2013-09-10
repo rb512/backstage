@@ -1,0 +1,6 @@
+#category
+= f.simple_fields_for :categories do |category|
+  = render 'category_fields', :f => category
+.links
+  = link_to_add_association 'Add Category', f, :categories,
+		:render_options => {:wrapper => 'inline'}, :class => 'btn btn-primary'
