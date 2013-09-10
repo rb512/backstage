@@ -45,6 +45,6 @@ class ItemAssetUploader < CarrierWave::Uploader::Base
       end
 
       def default_url
-        ActionController::Base.helpers.asset_path("fallback/" + [version_name, "no_image.png"].compact.join('_'))
+        ("/assets/fallback/" + [version_name, "no_image.png"].compact.join('_'))
       end
 end
