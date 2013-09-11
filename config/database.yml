@@ -39,5 +39,5 @@ production:
   database: grub_prod
   pool: 5
   username: awsgrub
-  password: ENV['DB_PASS']
+  password: <%= ENV['DB_PASS']%>
 
