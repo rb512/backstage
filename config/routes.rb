@@ -7,6 +7,7 @@ Backstage::Application.routes.draw do
     resources :menu_items
   end
   
+  resources :menu_items
   root :to => 'dashboard#home'
   match '/assign' => 'tablets#assign'
   match '/assign_tablets' => 'tablets#assign_tablets'
