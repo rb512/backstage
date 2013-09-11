@@ -13,16 +13,17 @@
   <dt><strong><%= model_class.human_attribute_name(:category) %>:</strong></dt>
   <dd><%= @menu_item.category %></dd>
   <dt><strong><%= model_class.human_attribute_name(:menu_id) %>:</strong></dt>
-  <dd><%= @menu_item.menu_id %></dd>
+  <dd><%= @menu_item.menu.name %></dd>
+  <td><%= image_tag @menu_item.item_asset%>
 </dl>
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
-              menu_menu_item_path, :class => 'btn'  %>
+              menu_path(@menu_item.menu), :class => 'btn'  %>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_menu_item_path(@menu_item), :class => 'btn' %>
+              edit_menu_menu_item_path(@menu_item, @menu_item.menu), :class => 'btn' %>
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              menu_menu_item_path(@menu_item),
+              menu_menu_item_path(@menu_item, @menu_item.menu),
               :method => 'delete',
               :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
               :class => 'btn btn-danger' %>
