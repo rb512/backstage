@@ -34,10 +34,10 @@ test:
 production:
   adapter: mysql2
   encoding: utf8
-  host: 10.112.39.252
+  host: grub.cdrowyhnyr29.us-east-1.rds.amazonaws.com
   reconnect: false
-  database: grubshire-prod
+  database: grub_prod
   pool: 5
-  username: root
-  password: Oscar2007
+  username: awsgrub
+  password: ENV['DB_PASS']
 
