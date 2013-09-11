@@ -14,7 +14,7 @@
   <dd><%= @menu_item.category %></dd>
   <dt><strong><%= model_class.human_attribute_name(:menu_id) %>:</strong></dt>
   <dd><%= @menu_item.menu.name %></dd>
-  <td><%= image_tag @menu_item.item_asset%>
+  <td><%= image_tag @menu_item.item_asset.url(:large)%>
 </dl>
 
 <div class="form-actions">
